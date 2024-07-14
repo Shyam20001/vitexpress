@@ -1,9 +1,12 @@
-import chalk from "chalk";
+//import chalk from "chalk";
 //import { z } from 'zod';
 // import _ from 'lodash'
+import 'colors'
 import express, { Response, Request } from "express";
 import ViteExpress from "vite-express";
+import { adderFn } from './server-add/adder';
 
+adderFn(2,3)
 
 // const userSchema = z.object({     
 //   name: z.string(),
@@ -40,6 +43,6 @@ app.get("/hello", (req: Request, res: Response) => {
 });
 
 ViteExpress.listen(app, PORT, () =>
-  console.log(chalk.bgMagenta(`the server is running >>>>> @http://localhost:${PORT}/`)),      
+  console.log(`the server is running >>>>> @http://localhost:${PORT}/`.bgMagenta),      
 );
 
